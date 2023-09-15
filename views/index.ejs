@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Message Board</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Message Board</h1>
+    <% for (let i = 0; i < messages.length; i++) { %>
+    <div>
+      <span><%= messages[i].text%></span>
+      <span><%= messages[i].user %></span>
+      <span><%= messages[i].added %></span>
+    </div>
+    <% } %>
+    <a href="/new">New Message</a>
   </body>
 </html>
